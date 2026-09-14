@@ -296,11 +296,11 @@ const profile: TranslationKeys['profile'] = {
         githubRepos: [
           {
             name: 'AdaptCV Frontend',
-            url: 'https://github.com/LordCrainer/adaptcv-frontend'
+            url: 'https://github.com/carlosgarcia-cagm/adaptcv-frontend'
           },
           {
             name: 'AdaptCV Backend',
-            url: 'https://github.com/LordCrainer/adaptcv-backend'
+            url: 'https://github.com/carlosgarcia-cagm/adaptcv-backend'
           }
         ],
         technologies: ['Nuxt', 'Vuetify', 'Node.js', 'Express', 'MongoDB'],
