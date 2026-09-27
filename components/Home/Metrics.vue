@@ -10,7 +10,7 @@
           <dd class="text-4xl font-bold text-blue-600 dark:text-blue-400 tabular-nums">
             <CountUp :value="rt(metric.value, { years })" />
           </dd>
-          <dt class="text-sm text-gray-500 dark:text-gray-400 leading-snug">{{ metric.label }}</dt>
+          <dt class="text-sm text-gray-500 dark:text-gray-400 leading-snug">{{ rt(metric.label) }}</dt>
         </div>
       </dl>
     </div>

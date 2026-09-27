@@ -21,7 +21,7 @@ import Footer from './components/footer/Footer.vue'
 import Header from './components/header/Header.vue'
 import { SITE_URL, THEME_STORAGE_KEY, buildPersonJsonLd } from './utils/profile'
 
-const { locale, t, tm } = useI18n()
+const { locale, t, tm, rt } = useI18n()
 
 // hreflang alternates, canonical, og:locale and og:url
 const i18nHead = useLocaleHead({ seo: true })
@@ -38,7 +38,7 @@ onMounted(async () => {
 
 const skills = computed(() =>
   (tm('skills.categories') as SkillCategory[]).flatMap((category) =>
-    category.skills.map((skill) => skill.name)
+    (category.skills as SkillCardSkill[]).map((skill) => rt(skill.name))
   )
 )
 

@@ -13,7 +13,7 @@
           class="md:grid md:grid-cols-[11rem_1fr] md:gap-8">
           <!-- desktop: dates on the left of the line -->
           <div class="hidden md:block text-right pt-6">
-            <p class="font-semibold text-blue-600 dark:text-blue-400">
+            <p class="font-semibold text-primary-600 dark:text-accent">
               {{ experience.period }}
             </p>
             <Chip :variant="WORK_MODE_VARIANTS[experience.workMode]" class="mt-2">
@@ -24,13 +24,13 @@
           <div
             class="timeline-track relative border-l-2 border-gray-200 dark:border-gray-700 pl-6 md:pl-8 pb-12">
             <span
-              class="timeline-dot absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-gray-50 dark:ring-gray-900"
+              class="timeline-dot absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-gray-50 dark:ring-gray-900"
               :class="{ 'is-current': experience.current }"
               aria-hidden="true"></span>
 
             <!-- mobile: dates above the card -->
             <div class="md:hidden flex flex-wrap items-center gap-2 mb-3">
-              <p class="font-semibold text-blue-600 dark:text-blue-400">
+              <p class="font-semibold text-primary-600 dark:text-accent">
                 {{ experience.period }}
               </p>
               <Chip :variant="WORK_MODE_VARIANTS[experience.workMode]">
@@ -59,7 +59,7 @@ import { useI18n } from 'vue-i18n'
 import Chip from '~/components/ui/Chip.vue'
 import TimelineCard from '~/components/ui/TimelineCard.vue'
 
-const { t, tm } = useI18n()
+const { t, tm, rt } = useI18n()
 
 const WORK_MODE_VARIANTS = {
   remote: 'success',
@@ -68,7 +68,22 @@ const WORK_MODE_VARIANTS = {
 } as const
 
 const experiences = computed(() =>
-  tm('timeline.experiences') as TimelineExperience[]
+  (tm('timeline.experiences') as TimelineExperience[]).map(exp => ({
+    company: rt(exp.company),
+    current: exp.current,
+    position: rt(exp.position),
+    location: rt(exp.location),
+    workMode: rt(exp.workMode) as TimelineExperience['workMode'],
+    period: rt(exp.period),
+    description: rt(exp.description),
+    achievements: (exp.achievements as unknown[]).map(a => rt(a as string)),
+    projects: (exp.projects as TimelineProject[]).map(p => ({
+      name: rt(p.name),
+      period: rt(p.period),
+      description: rt(p.description)
+    })),
+    technologies: (exp.technologies as unknown[]).map(tech => rt(tech as string))
+  }))
 )
 </script>
 
@@ -86,7 +101,7 @@ li:last-child .timeline-track {
   bottom: 0;
   left: -2px;
   width: 2px;
-  background: rgb(59 130 246);
+  background: var(--color-primary-600);
   transform-origin: top;
   transition: transform 0.9s ease-out;
 }
@@ -117,7 +132,7 @@ li:last-child .timeline-track {
   position: absolute;
   inset: -4px;
   border-radius: 9999px;
-  border: 2px solid rgb(59 130 246 / 0.7);
+  border: 2px solid color-mix(in srgb, var(--color-primary-600) 70%, transparent);
   animation: dot-pulse 2s ease-out infinite;
 }
 

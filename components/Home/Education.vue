@@ -46,8 +46,20 @@ import { useI18n } from 'vue-i18n'
 
 import Chip from '~/components/ui/Chip.vue'
 
-const { t, tm } = useI18n()
+const { t, tm, rt } = useI18n()
 
-const education = computed(() => tm('education.items') as EducationItem[])
-const languages = computed(() => tm('languages.items') as LanguageItem[])
+const education = computed(() =>
+  (tm('education.items') as EducationItem[]).map(item => ({
+    institution: rt(item.institution),
+    degree: rt(item.degree),
+    period: item.period != null ? rt(item.period as unknown as string) : undefined,
+    note: item.note != null ? rt(item.note as unknown as string) : undefined
+  }))
+)
+const languages = computed(() =>
+  (tm('languages.items') as LanguageItem[]).map(item => ({
+    name: rt(item.name),
+    level: rt(item.level)
+  }))
+)
 </script>

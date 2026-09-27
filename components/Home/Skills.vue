@@ -41,9 +41,18 @@ import { useI18n } from 'vue-i18n'
 
 import SkillCard from '~/components/ui/SkillCard.vue'
 
-const { t, tm } = useI18n()
+const { t, tm, rt } = useI18n()
 
 const skillCategories = computed(() =>
-  tm('skills.categories') as SkillCategory[]
+  (tm('skills.categories') as SkillCategory[]).map(category => ({
+    id: rt(category.id),
+    title: rt(category.title),
+    icon: rt(category.icon),
+    gradient: rt(category.gradient),
+    skills: (category.skills as SkillCardSkill[]).map(skill => ({
+      name: rt(skill.name),
+      level: rt(skill.level) as SkillCardSkill['level']
+    }))
+  }))
 )
 </script>

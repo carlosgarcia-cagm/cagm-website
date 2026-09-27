@@ -9,7 +9,7 @@
       data-testid="chat-panel"
       class="flex flex-col w-[min(24rem,calc(100vw-2rem))] h-[min(34rem,calc(100dvh-7rem))] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
       @keydown.esc="close">
-      <header class="flex items-center justify-between gap-2 px-4 py-3 bg-blue-600 text-white">
+      <header class="flex items-center justify-between gap-2 px-4 py-3 bg-accent text-white">
         <h2 id="cv-chat-title" class="font-semibold">{{ t('chat.title') }}</h2>
         <button
           type="button"
@@ -34,7 +34,7 @@
             v-for="suggestion in suggestions"
             :key="suggestion"
             type="button"
-            class="text-left text-sm px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/40"
+            class="text-left text-sm px-3 py-1.5 rounded-full border border-primary-600/30 dark:border-accent/40 text-primary-600 dark:text-accent hover:bg-primary-600/5 dark:hover:bg-accent/10"
             @click="ask(suggestion)">
             {{ suggestion }}
           </button>
@@ -72,12 +72,12 @@
             :placeholder="t('chat.placeholder')"
             :aria-label="t('chat.placeholder')"
             data-testid="chat-input"
-            class="flex-1 min-w-0 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            class="flex-1 min-w-0 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent" />
           <button
             type="submit"
             :disabled="isStreaming || !draft.trim()"
             :aria-label="t('chat.send')"
-            class="inline-flex items-center justify-center w-10 h-10 shrink-0 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed">
+            class="inline-flex items-center justify-center w-10 h-10 shrink-0 rounded-lg bg-accent hover:bg-accent-dark text-white disabled:opacity-50 disabled:cursor-not-allowed">
             <Icon name="heroicons:paper-airplane" size="20" aria-hidden="true" />
           </button>
         </div>
@@ -86,7 +86,7 @@
 
     <button
       type="button"
-      class="inline-flex items-center gap-2 rounded-full bg-blue-600 text-white px-4 py-3 shadow-lg hover:bg-blue-700 transition-colors"
+      class="inline-flex items-center gap-2 rounded-full bg-accent hover:bg-accent-dark text-white px-4 py-3 shadow-lg transition-colors"
       :aria-expanded="isOpen"
       aria-controls="cv-chat"
       :aria-label="isOpen ? t('chat.close') : t('chat.open')"
@@ -107,7 +107,7 @@ import { useI18n } from 'vue-i18n'
 // keep in sync with CHAT_LIMITS.maxMessageLength in server/utils/chat.ts
 const MAX_QUESTION_LENGTH = 500
 
-const { t, tm } = useI18n()
+const { t, tm, rt } = useI18n()
 const { messages, isStreaming, send, stop } = useCvChat()
 
 const isOpen = ref(false)
@@ -115,7 +115,7 @@ const draft = ref('')
 const inputRef = ref<HTMLInputElement>()
 const scrollRef = ref<HTMLElement>()
 
-const suggestions = computed(() => tm('chat.suggestions') as string[])
+const suggestions = computed(() => (tm('chat.suggestions') as unknown[]).map(s => rt(s as string)))
 
 async function open() {
   isOpen.value = true
