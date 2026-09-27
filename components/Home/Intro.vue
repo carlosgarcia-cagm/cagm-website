@@ -42,20 +42,6 @@
           </NuxtLink>
         </div>
 
-        <dl
-          class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto"
-          data-testid="hero-metrics">
-          <div
-            v-for="metric in metrics"
-            :key="metric.label"
-            class="flex flex-col-reverse justify-end rounded-xl bg-white/70 dark:bg-gray-800/70 px-4 py-3 shadow-sm">
-            <dt class="text-sm text-gray-600 dark:text-gray-400">{{ metric.label }}</dt>
-            <dd class="text-3xl font-bold text-blue-600 dark:text-blue-400">
-              <CountUp :value="rt(metric.value, { years })" />
-            </dd>
-          </div>
-        </dl>
-
         <ul class="mt-8 flex justify-center gap-4" data-testid="hero-social">
           <li v-for="link in socialLinks" :key="link.key">
             <a
@@ -77,15 +63,13 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
 
-import CountUp from '~/components/ui/CountUp.vue'
 import TypeWriter from '~/components/ui/TypeWriter.vue'
 import { PROFILE, buildContactLinks, yearsOfExperience } from '~/utils/profile'
 
-const { locale, t, tm, rt } = useI18n()
+const { locale, t } = useI18n()
 const localePath = useLocalePath()
 
 const years = yearsOfExperience()
-const metrics = computed(() => tm('home.metrics') as HeroMetric[])
 
 const socialLinks = computed(() =>
   buildContactLinks(['linkedin', 'github', 'email'], (key) =>
