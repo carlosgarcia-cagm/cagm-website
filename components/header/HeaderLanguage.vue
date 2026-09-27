@@ -6,7 +6,7 @@
     :aria-label="t('nav.switchLanguage')"
     :title="t('nav.switchLanguage')"
     data-testid="language-switch"
-    class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors">
+    class="px-3 py-1.5 rounded-lg bg-accent hover:bg-accent-dark text-white text-sm font-semibold transition-colors">
     {{ otherLocale.toUpperCase() }}
   </NuxtLink>
 </template>

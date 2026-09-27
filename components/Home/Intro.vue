@@ -3,9 +3,9 @@
     <div class="max-w-6xl mx-auto w-full">
       <div class="text-center">
         <div class="mb-8">
-          <div class="logo-halo w-36 h-36 mx-auto rounded-full border-4 border-white dark:border-gray-700 p-2">
+          <div class="logo-halo w-36 h-36 mx-auto rounded-full border-5 border-primary-400 p-2">
             <div
-              class="w-full h-full rounded-full border-4 border-white dark:border-gray-700 bg-white flex items-center justify-center">
+              class="w-full h-full rounded-full border-4 border-primary-500 dark:border-primary-500 bg-white flex items-center justify-center">
               <img
                 src="/logo.png"
                 alt=""
@@ -16,7 +16,7 @@
           </div>
         </div>
         <h1 class="mb-6">
-          <span class="block text-xl md:text-2xl font-semibold text-blue-700 dark:text-blue-400 mb-2">
+          <span class="block text-xl md:text-2xl font-semibold text-primary-600 dark:text-accent mb-2">
             {{ PROFILE.name }}
           </span>
           <span class="block text-4xl md:text-6xl font-bold text-gray-800 dark:text-gray-100">
@@ -30,7 +30,7 @@
           <a
             href="#projects"
             data-testid="cta-projects"
-            class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            class="inline-flex items-center justify-center px-8 py-4 bg-accent hover:bg-accent-dark text-white rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             {{ t('home.viewProjects') }}
           </a>
           <NuxtLink

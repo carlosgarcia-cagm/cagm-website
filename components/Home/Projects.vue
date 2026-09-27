@@ -26,7 +26,7 @@
         </p>
         <a
           :href="`mailto:${PROFILE.email}`"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
+          class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-white font-medium rounded-lg transition-colors duration-200">
           <Icon name="material-symbols:mail-outline" size="20" aria-hidden="true" />
           {{ t('home.contactMe') }}
         </a>

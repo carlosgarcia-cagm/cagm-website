@@ -12,7 +12,7 @@
           v-for="item in navItems"
           :key="item.id"
           :href="item.href"
-          class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-accent transition-colors">
           {{ item.label }}
         </a>
       </nav>
@@ -47,7 +47,7 @@
         v-for="item in navItems"
         :key="item.id"
         :href="item.href"
-        class="block py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
+        class="block py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-accent"
         @click="isMenuOpen = false">
         {{ item.label }}
       </a>

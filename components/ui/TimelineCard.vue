@@ -3,7 +3,7 @@
     class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
     <header class="mb-4">
       <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-1">{{ company }}</h3>
-      <p class="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-2">{{ position }}</p>
+      <p class="text-lg font-semibold text-primary-600 dark:text-accent mb-2">{{ position }}</p>
       <p class="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
         <Icon name="heroicons:map-pin" size="16" aria-hidden="true" />
         {{ location }}

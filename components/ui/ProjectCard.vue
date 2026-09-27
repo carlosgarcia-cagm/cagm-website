@@ -40,7 +40,7 @@
       <button
         v-if="isTruncated || isExpanded"
         type="button"
-        class="mt-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+        class="mt-1 text-sm font-medium text-primary-600 dark:text-accent hover:underline"
         :aria-expanded="isExpanded"
         :aria-controls="descriptionId"
         data-testid="project-toggle"
@@ -64,7 +64,7 @@
         :href="project.projectUrl"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
+        class="inline-flex items-center gap-2 px-4 py-2 bg-accent hover:bg-accent-dark text-white text-sm font-medium rounded-lg transition-colors duration-200">
         <Icon name="heroicons:arrow-top-right-on-square" size="16" aria-hidden="true" />
         {{ t('projects.viewProject') }}
       </a>

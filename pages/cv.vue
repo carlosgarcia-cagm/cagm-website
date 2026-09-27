@@ -6,7 +6,7 @@
       <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
         <NuxtLink
           :to="localePath('/')"
-          class="inline-flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">
+          class="inline-flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-accent">
           <Icon name="heroicons:arrow-left" size="16" aria-hidden="true" />
           {{ t('cv.back') }}
         </NuxtLink>
@@ -47,7 +47,7 @@
           <!-- only useful when the screen is narrower than the page -->
           <button
             type="button"
-            class="cv-fit-toggle inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-500"
+            class="cv-fit-toggle inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-primary-600 dark:hover:border-accent"
             data-testid="cv-fit-toggle"
             @click="toggleFit">
             <Icon
@@ -57,7 +57,7 @@
             {{ mode === 'fit' ? t('cv.actualSize') : t('cv.fitWidth') }}
           </button>
 
-          <button type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-500" @click="print">
+          <button type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-primary-600 dark:hover:border-accent" @click="print">
             <Icon name="heroicons:printer" size="18" aria-hidden="true" />
             <span class="hidden sm:inline">{{ t('cv.print') }}</span>
             <span class="sr-only sm:hidden">{{ t('cv.print') }}</span>
@@ -66,7 +66,7 @@
             :href="cvDownloadPath(locale)"
             download
             data-testid="cv-download"
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent hover:bg-accent-dark text-white text-sm font-medium">
             <Icon name="material-symbols:download" size="18" aria-hidden="true" />
             {{ t('cv.download') }}
           </a>

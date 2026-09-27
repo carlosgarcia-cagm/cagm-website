@@ -4,6 +4,24 @@
    the script in app.vue from the saved choice or the system preference */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Brand colors extracted from logo.png */
+@theme {
+  --color-primary-50:  #F1F8FE;
+  --color-primary-100: #DEEFFC;
+  --color-primary-200: #B4DAF9;
+  --color-primary-300: #72B9F3;
+  --color-primary-400: #2291EC;
+  --color-primary-500: #0E64A9;
+  --color-primary-600: #062B49;
+  --color-primary-700: #041C2F;
+  --color-primary-800: #031321;
+  --color-primary-900: #020B13;
+  --color-primary-950: #010609;
+
+  --color-accent: #FD6601;
+  --color-accent-dark: #D95400;
+}
+
 html {
   /* keep section headings visible below the fixed header */
   scroll-padding-top: 5rem;
@@ -42,9 +60,14 @@ body {
   position: absolute;
   inset: -4px;
   border-radius: 9999px;
-  border: 2px solid rgb(59 130 246 / 0.6);
+  border: 4px solid color-mix(in srgb, var(--color-primary-500) 80%, transparent);
   animation: halo-pulse 3s ease-out infinite;
   pointer-events: none;
+}
+
+:where(.dark, .dark *) .logo-halo::before,
+:where(.dark, .dark *) .logo-halo::after {
+  border-color: color-mix(in srgb, var(--color-primary-200) 70%, transparent);
 }
 
 .logo-halo::after {
