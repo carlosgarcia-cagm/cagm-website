@@ -1,139 +1,75 @@
 <template>
-  <div
-    class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 max-w-xl mx-auto">
-    <div class="mb-4">
-      <h3 class="text-xl font-bold text-gray-800 mb-1">{{ company }}</h3>
-      <h4 class="text-lg font-semibold text-blue-600 mb-2">{{ position }}</h4>
-      <div class="flex items-center text-sm text-gray-500 mb-2">
-        <svg
-          class="w-4 h-4 mr-1"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-        </svg>
+  <article
+    class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+    <header class="mb-4">
+      <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-1">{{ company }}</h3>
+      <p class="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-2">{{ position }}</p>
+      <p class="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
+        <Icon name="heroicons:map-pin" size="16" aria-hidden="true" />
         {{ location }}
-        <span class="mx-2">•</span>
-        <Chip :variant="workModeVariant">
-          {{ workModeLabel }}
-        </Chip>
-      </div>
-      <div class="flex items-center text-sm text-gray-500">
-        <svg
-          class="w-4 h-4 mr-1"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 8h6M3 21h18M5 21V9a2 2 0 012-2h10a2 2 0 012 2v12"></path>
-        </svg>
-        {{ period }}
-      </div>
-    </div>
+      </p>
+    </header>
 
-    <p class="text-gray-600 mb-4 leading-relaxed">{{ description }}</p>
+    <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{{ description }}</p>
 
     <div v-if="achievements.length" class="mb-4">
-      <h5 class="font-semibold text-gray-800 mb-2">
-        {{ t('profile.timeline.achievementsLabel') }}:
-      </h5>
+      <h4 class="font-semibold text-gray-800 dark:text-gray-100 mb-2">
+        {{ t('timeline.achievementsLabel') }}:
+      </h4>
       <ul class="space-y-2">
         <li
           v-for="(achievement, index) in achievements"
           :key="index"
-          class="flex items-start space-x-2 text-sm text-gray-600">
-          <div
-            class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+          class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
+          <span
+            class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 shrink-0"
+            aria-hidden="true"></span>
           <span>{{ achievement }}</span>
         </li>
       </ul>
     </div>
 
     <div v-if="projects.length" class="mb-4">
-      <h5 class="font-semibold text-gray-800 mb-2">
-        {{ t('profile.timeline.projectsLabel') }}:
-      </h5>
+      <h4 class="font-semibold text-gray-800 dark:text-gray-100 mb-2">
+        {{ t('timeline.projectsLabel') }}:
+      </h4>
       <div class="space-y-3">
         <div
           v-for="project in projects"
           :key="project.name"
-          class="bg-gray-50 rounded-lg p-3">
-          <h6 class="font-medium text-gray-800 text-sm">
+          class="bg-gray-50 dark:bg-gray-900/60 rounded-lg p-3">
+          <h5 class="font-medium text-gray-800 dark:text-gray-100 text-sm">
             {{ project.name }} ({{ project.period }})
-          </h6>
-          <p class="text-xs text-gray-600 mt-1">{{ project.description }}</p>
+          </h5>
+          <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">{{ project.description }}</p>
         </div>
       </div>
     </div>
 
-    <!-- Tecnologías -->
     <div class="flex flex-wrap gap-1.5">
       <Chip v-for="tech in technologies" :key="tech" variant="info" size="sm">
         {{ tech }}
       </Chip>
     </div>
-  </div>
+  </article>
 </template>
 
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
-import Chip from './Chip.vue'
 
-interface Project {
-  name: string
-  period: string
-  description: string
-}
+import Chip from './Chip.vue'
 
 interface Props {
   company: string
   position: string
   location: string
-  workMode: 'remote' | 'onsite' | 'hybrid'
-  period: string
   description: string
   achievements: string[]
-  projects: Project[]
+  projects: TimelineProject[]
   technologies: string[]
-  cardPosition?: 'left' | 'right'
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  cardPosition: 'left'
-})
+defineProps<Props>()
 
 const { t } = useI18n()
-
-const workModeVariant = computed(() => {
-  switch (props.workMode) {
-    case 'remote':
-      return 'success'
-    case 'onsite':
-      return 'info'
-    case 'hybrid':
-      return 'warning'
-    default:
-      return 'info'
-  }
-})
-
-const workModeLabel = computed(() => {
-  switch (props.workMode) {
-    case 'remote':
-      return t('profile.timeline.workModes.remote')
-    case 'onsite':
-      return t('profile.timeline.workModes.onsite')
-    case 'hybrid':
-      return t('profile.timeline.workModes.hybrid')
-    default:
-      return t('profile.timeline.workModes.remote')
-  }
-})
 </script>

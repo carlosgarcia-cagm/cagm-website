@@ -21,6 +21,12 @@
         "tabWidth": 2,
         "parser": "json-stringify"
       }
+    },
+    {
+      "files": "locales/*.ts",
+      "options": {
+        "objectWrap": "collapse"
+      }
     }
   ]
 }

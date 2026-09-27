@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+/* dark: follows the `dark` class on <html> (theme toggle), set before paint by
+   the script in app.vue from the saved choice or the system preference */
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  /* keep section headings visible below the fixed header */
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* v-reveal (plugins/reveal.ts): only elements that start below the fold wait */
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.is-revealed {
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+/* soft pulsing halo around the hero logo */
+.logo-halo {
+  position: relative;
+}
+
+.logo-halo::before,
+.logo-halo::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 2px solid rgb(59 130 246 / 0.6);
+  animation: halo-pulse 3s ease-out infinite;
+  pointer-events: none;
+}
+
+.logo-halo::after {
+  animation-delay: 1.5s;
+}
+
+@keyframes halo-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+}
