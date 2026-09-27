@@ -36,7 +36,7 @@
           <NuxtLink
             :to="localePath('/cv')"
             data-testid="cta-cv"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg font-semibold hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300">
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-gray-500 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg font-semibold hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300">
             <Icon name="heroicons:document-text" size="20" aria-hidden="true" />
             {{ t('cv.view') }}
           </NuxtLink>

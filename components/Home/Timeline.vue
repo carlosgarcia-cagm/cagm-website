@@ -13,7 +13,7 @@
           class="md:grid md:grid-cols-[11rem_1fr] md:gap-8">
           <!-- desktop: dates on the left of the line -->
           <div class="hidden md:block text-right pt-6">
-            <p class="font-semibold text-primary-600 dark:text-accent">
+            <p class="font-semibold text-primary-500 dark:text-accent">
               {{ experience.period }}
             </p>
             <Chip :variant="WORK_MODE_VARIANTS[experience.workMode]" class="mt-2">
@@ -24,13 +24,13 @@
           <div
             class="timeline-track relative border-l-2 border-gray-200 dark:border-gray-700 pl-6 md:pl-8 pb-12">
             <span
-              class="timeline-dot absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-gray-50 dark:ring-gray-900"
+              class="timeline-dot absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary-500 ring-4 ring-gray-50 dark:ring-gray-900"
               :class="{ 'is-current': experience.current }"
               aria-hidden="true"></span>
 
             <!-- mobile: dates above the card -->
             <div class="md:hidden flex flex-wrap items-center gap-2 mb-3">
-              <p class="font-semibold text-primary-600 dark:text-accent">
+              <p class="font-semibold text-primary-500 dark:text-accent">
                 {{ experience.period }}
               </p>
               <Chip :variant="WORK_MODE_VARIANTS[experience.workMode]">
@@ -101,7 +101,7 @@ li:last-child .timeline-track {
   bottom: 0;
   left: -2px;
   width: 2px;
-  background: var(--color-primary-600);
+  background: var(--color-primary-500);
   transform-origin: top;
   transition: transform 0.9s ease-out;
 }
@@ -132,7 +132,7 @@ li:last-child .timeline-track {
   position: absolute;
   inset: -4px;
   border-radius: 9999px;
-  border: 2px solid color-mix(in srgb, var(--color-primary-600) 70%, transparent);
+  border: 2px solid color-mix(in srgb, var(--color-primary-500) 70%, transparent);
   animation: dot-pulse 2s ease-out infinite;
 }
 
