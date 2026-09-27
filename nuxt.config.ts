@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
-    ...(process.env.NODE_ENV !== 'production' ? ['@nuxt/eslint'] : [])
+    '@nuxt/eslint'
   ],
   icon: {
     // bundle the icons used so they render without calling the Iconify API
