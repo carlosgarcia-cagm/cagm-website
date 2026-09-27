@@ -69,48 +69,62 @@ const profile: TranslationKeys['profile'] = {
           '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>',
         skills: [
           { name: 'Node.js', level: 'green' },
-          { name: 'Express.js', level: 'green' },
-          { name: 'TypeScript', level: 'blue' },
-          { name: 'APIs & Integrations', level: 'green' },
-          { name: 'Databases (MongoDB, PostgreSQL)', level: 'green' },
-          { name: 'Testing (Jest, Vitest)', level: 'blue' }
+          { name: 'TypeScript', level: 'green' },
+          { name: 'NestJS', level: 'green' }
         ]
       },
-    {
-      id: 'infra',
-      title: 'Infra',
-      gradient: 'from-purple-500 to-purple-600',
-      icon:
-        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path>',
-      skills: [
-        { name: 'Terraform', level: 'green' },
-        { name: 'CI/CD (GitHub Actions)', level: 'green' },
-        { name: 'Docker', level: 'green' },
-        { name: 'Cloud (AWS, GCP, DigitalOcean)', level: 'green' }
-      ]
-    },
-    {
-      id: 'observability',
-      title: 'Observability',
-      gradient: 'from-indigo-500 to-indigo-600',
-      icon:
-        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>',
-      skills: [
-        { name: 'Grafana', level: 'blue' },
-        { name: 'Prometheus', level: 'blue' },
-        { name: 'Alertmanager', level: 'blue' }
-      ]
-    },
-    {
-      id: 'analytics',
-      title: 'Analytics',
-      gradient: 'from-teal-500 to-teal-600',
-      icon:
-        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>',
-      skills: [
-        { name: 'Metabase', level: 'blue' }
-      ]
-    },
+      {
+        id: 'databases',
+        title: 'Databases',
+        gradient: 'from-green-500 to-green-600',
+        icon:
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>',
+        skills: [
+          { name: 'MongoDB', level: 'green' },
+          { name: 'PostgreSQL', level: 'blue' },
+          { name: 'MySQL', level: 'blue' },
+          { name: 'Redis', level: 'blue' },
+          { name: 'Prisma', level: 'blue' }
+        ]
+      },
+      {
+        id: 'infra',
+        title: 'Cloud & Infrastructure',
+        gradient: 'from-purple-500 to-purple-600',
+        icon:
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path>',
+        skills: [
+          { name: 'GCP', level: 'green' },
+          { name: 'DigitalOcean', level: 'green' },
+          { name: 'Docker', level: 'green' },
+          { name: 'Terraform', level: 'blue' },
+          { name: 'AWS', level: 'blue' }
+        ]
+      },
+      {
+        id: 'cicd',
+        title: 'CI/CD & Testing',
+        gradient: 'from-pink-500 to-pink-600',
+        icon:
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>',
+        skills: [
+          { name: 'GitHub Actions', level: 'green' },
+          { name: 'Vitest', level: 'green' },
+          { name: 'Jest', level: 'blue' }
+        ]
+      },
+      {
+        id: 'observability',
+        title: 'Observability & Tools',
+        gradient: 'from-indigo-500 to-indigo-600',
+        icon:
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>',
+        skills: [
+          { name: 'FFmpeg', level: 'green' },
+          { name: 'Grafana', level: 'blue' },
+          { name: 'Prometheus', level: 'blue' }
+        ]
+      },
       {
         id: 'frontend',
         title: 'Frontend',
@@ -118,10 +132,8 @@ const profile: TranslationKeys['profile'] = {
         icon:
           '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>',
         skills: [
-          { name: 'Vue 3 & Composition API', level: 'green' },
-          { name: 'Nuxt.js', level: 'green' },
-          { name: 'JavaScript ES6+', level: 'green' },
-          { name: 'Quasar', level: 'blue' }
+          { name: 'Angular', level: 'green' },
+          { name: 'Vue.js / Nuxt 3', level: 'green' }
         ]
       }
     ]
@@ -149,92 +161,125 @@ const profile: TranslationKeys['profile'] = {
     projectsLabel: 'Projects',
     experiences: [
       {
-        company: 'Lanubetv S.A.',
-        position: 'Contract Technical Consultant',
+        company: 'Roi Studio',
+        position: 'Senior Backend / Platform Engineer (Contract)',
         location: 'Guayaquil, Ecuador',
         workMode: 'remote',
-        period: 'January 2019 – Present',
+        period: 'November 2023 – Present',
         description:
-          'Led the design, development, and implementation of a backend-heavy platform optimized for automation, reliability, and cost.',
+          'International contract building and operating production systems for real-time IoT location, special education SaaS, and enterprise productivity.',
         achievements: [
-          'Automated the conversion process, reducing processing time from 1 hour to 4 minutes (+93% efficiency)',
-          'Reduced storage costs by 90% by migrating to Space Storage (S3)',
-          'Removed a Windows Server instance, cutting costs by 65%',
-          'Lowered additional costs by 35% through infrastructure optimization',
-          'Implemented Screaming Architecture, automated testing, and CI/CD pipelines'
+          'Implemented end-to-end observability (metrics → alerts → dashboards) with Prometheus, Grafana, and Alertmanager over ECS microservices',
+          'Built on-demand, PR-specific sandbox environments on Docker-based EC2 with GitHub Actions CI/CD',
+          'Set up Metabase from scratch on ECS with automated, versioned configuration and S3 → Glacier backup and retention policies',
+          'Implemented SSO with Azure AD + WorkOS for federated enterprise authentication',
+          'Operated a high-scale MongoDB database (200k+ active users, 1 TB+ of data), using BigQuery to detect and recover inconsistent data',
+          'Built 3 Google Cloud Functions with Cloud Scheduler and managed GCP infrastructure with Terraform'
+        ],
+        projects: [
+          {
+            name: 'Real-Time 3D Location Platform (ZLP)',
+            period: 'Feb 2025 – Present',
+            description:
+              'IoT location intelligence on AWS: NestJS microservices, Kinesis streaming, Terraform, observability, and unit tests for geofencing services.'
+          },
+          {
+            name: 'Special Education SaaS Platform (IEP)',
+            period: 'Jul 2025 – Dec 2025',
+            description:
+              'Backend development for a SaaS platform for special education.'
+          },
+          {
+            name: 'Enterprise Productivity Monitoring Platform',
+            period: 'Nov 2023 – Feb 2025',
+            description:
+              'Maintained a full ecosystem (web app, API, Flutter mobile app, backoffice, and async workers), consistently meeting 40+ story points per sprint and stabilizing the bug backlog.'
+          }
+        ],
+        technologies: [
+          'NestJS',
+          'TypeScript',
+          'PostgreSQL',
+          'Redis',
+          'AWS',
+          'Terraform',
+          'Docker',
+          'Prometheus',
+          'Grafana',
+          'Metabase',
+          'GitHub Actions',
+          'MongoDB',
+          'GCP',
+          'Angular'
+        ]
+      },
+      {
+        company: 'Lanubetv S.A.',
+        position: 'Senior Technical Consultant (Contract)',
+        location: 'Guayaquil, Ecuador',
+        workMode: 'remote',
+        period: 'January 2019 – March 2026',
+        description:
+          'Video transcoding platform that receives commercials, converts them to channel-specific formats with FFmpeg, and delivers them to media outlets. Full-time until mid-2021, then part-time.',
+        achievements: [
+          'Migrated the transcoding pipeline to parallel serverless Go functions, achieving up to 42x faster conversion (60–80 min → 1m55s per batch of channels)',
+          'Cut storage costs 10x by migrating to DigitalOcean Spaces',
+          'Decommissioned a manually operated Windows server and right-sized servers to demand',
+          'Migrated ~90% of the legacy PHP platform to NestJS + Prisma + MySQL with Screaming Architecture, unit/integration/e2e testing, CI/CD, and Docker'
         ],
         projects: [],
         technologies: [
           'Node.js',
-          'Ffmpeg/Ffmbc',
+          'Go',
+          'NestJS',
+          'FFmpeg',
           'Vue.js',
           'Quasar',
           'Docker',
           'GitHub Actions',
           'Vitest',
-          'MongoDB'
-        ]
-      },
-      {
-        company: 'Independent Technical Consultant',
-        position: 'Contract Senior Backend Developer',
-        location: 'Guayaquil, Ecuador',
-        workMode: 'remote',
-        period: 'December 2023 – January 2025',
-        description:
-          'Managed the maintenance and optimization of 5 complex backend systems for an international project.',
-        achievements: [
-          'Contributed to a 24% increase in annual MRR',
-          'Reached 50% MRR in Q2 thanks to the development of a new feature',
-          'Helped close a strategic client',
-          'Increased team efficiency from 40% to 84% in ticket closing',
-          'Developed 3 new cloud workers using GCF and Cloud Scheduler'
-        ],
-        projects: [],
-        technologies: [
-          'Node.js',
-          'Angular',
-          'Flutter',
           'MongoDB',
-          'Big Query',
-          'WorkOS',
-          'GCP'
+          'DigitalOcean'
         ]
       },
       {
-        company: 'Nextgen',
-        position: 'Backend Developer and Technical Lead',
+        company: 'Nextgen S.A.',
+        position: 'Technical Lead (Contract)',
         location: 'Guayaquil, Ecuador',
         workMode: 'hybrid',
-        period: 'June 2021 – April 2024',
+        period: 'July 2021 – March 2024',
         description:
-          'Led multiple development projects and teams, delivering backend improvements, scalable solutions, and process optimizations.',
+          'Grew from mid-senior developer to technical lead, owning architecture decisions across 4 concurrent projects.',
         achievements: [
-          'Led a team of 5 developers and 1 QA',
-          'Implemented improvements that reduced development times by 20%',
-          'Improved team management by 30%',
-          'Optimized code to handle 1M+ records per request'
+          'Led a team of 5 developers + 1 QA for 1+ year: sprints, mentoring, and deliverable reviews',
+          'Reduced development cycle times by 20% through process and communication improvements',
+          'Designed a serverless architecture with DynamoDB capable of processing 1M+ records per request',
+          'Secured retention of a key client by leading critical bug resolution'
         ],
         projects: [
           {
             name: 'Senscloud',
-            period: '2021 - 2024',
-            description: 'Managed the development of backend-focused features for clients'
-          },
-          {
-            name: 'Xtrim',
-            period: '2024',
-            description: 'Improved communication and delivery workflows'
-          },
-          {
-            name: 'Nextsign',
-            period: '2024',
-            description: 'Resolved critical bugs and developed backend features'
+            period: '2021 – 2024',
+            description:
+              'Technical leadership of the team and delivery of new client features.'
           },
           {
             name: 'NextTrace',
             period: '2023',
-            description: 'Developed and implemented serverless backend architecture'
+            description:
+              'Serverless architecture with DynamoDB for 1M+ records per request.'
+          },
+          {
+            name: 'Xtrim',
+            period: 'Sep – Oct 2023',
+            description:
+              'Joined in the final stretch, introduced Jira to replace Excel, and optimized queries with database indexes.'
+          },
+          {
+            name: 'Nextsign',
+            period: '2024',
+            description:
+              'Technical lead for post-Phase 1 critical bug resolution.'
           }
         ],
         technologies: [
@@ -243,6 +288,7 @@ const profile: TranslationKeys['profile'] = {
           'React',
           'MongoDB',
           'PostgreSQL',
+          'DynamoDB',
           'Docker',
           'AWS'
         ]
@@ -262,9 +308,9 @@ const profile: TranslationKeys['profile'] = {
         id: 'la-nube-tv-migration',
         title: 'La Nube TV Platform Migration',
         description:
-          'Migration of the La Nube TV platform from PHP, MySQL, and JavaScript to Vue 3, Quasar, Node.js, and MongoDB, with cleaner architecture and better maintainability.',
+          'Migration of ~90% of the La Nube TV legacy PHP platform to NestJS, Prisma, and MySQL with Screaming Architecture, unit/integration/e2e testing, CI/CD, and Docker, plus a Vue 3 + Quasar frontend.',
         projectUrl: 'https://app2.lanubetv.net/',
-        technologies: ['Vue 3', 'Quasar', 'Node.js', 'MongoDB'],
+        technologies: ['NestJS', 'Prisma', 'MySQL', 'Vue 3', 'Quasar', 'Docker'],
         isPublic: false
       },
       {
@@ -289,7 +335,7 @@ const profile: TranslationKeys['profile'] = {
         id: 'adaptcv',
         title: 'AdaptCV',
         description:
-          'A CV generator web app with PDF export, built with Nuxt, Vuetify, Node.js, Express, and MongoDB.',
+          'A production web platform to generate professional CVs with multiple templates, bilingual support (ES/EN), and AI-powered automatic translation. Built as a full-stack Turborepo monorepo with automated CI/CD.',
         projectUrl: 'https://adaptcv-frontend.vercel.app/',
         githubRepos: [
           {
@@ -301,8 +347,16 @@ const profile: TranslationKeys['profile'] = {
             url: 'https://github.com/carlosgarcia-cagm/adaptcv-backend'
           }
         ],
-        technologies: ['Nuxt', 'Vuetify', 'Node.js', 'Express', 'MongoDB'],
+        technologies: ['NestJS', 'Nuxt 3', 'MongoDB', 'Docker', 'GitHub Actions', 'TypeScript'],
         isPublic: true
+      },
+      {
+        id: 'real-estate-analyzer',
+        title: 'Real Estate Price Analyzer',
+        description:
+          'A web scraping tool that collects real estate listings and automatically estimates market value from land characteristics, to evaluate whether a property is priced reasonably.',
+        technologies: ['TypeScript', 'Playwright', 'Node.js', 'Firebase', 'Google Sheets API'],
+        isPublic: false
       },
       {
         id: 'la-nube-tv',
@@ -359,9 +413,9 @@ const footer: TranslationKeys['footer'] = {
 export default defineI18nLocale(async () => {
   return {
     home: {
-      title: 'Senior Software Developer focused on Backend',
+      title: 'Senior Backend / Platform Engineer',
       description:
-        'I build APIs and backend systems, automate processes, and solve problems in real production environments. I have practical experience with CI/CD, Terraform, AWS, GCP, DigitalOcean, and observability when the project needs it.',
+        'Senior Backend / Platform Engineer with 7+ years as an independent contractor, building production systems across media, IoT, and enterprise productivity with Node.js, TypeScript, and NestJS. I design AWS and GCP infrastructure with Terraform, CI/CD, and observability, with a proven record of 10x cost reductions and up to 42x performance improvements in production.',
       viewProjects: 'View Projects',
       downloadCV: 'Download CV',
       skillsTitle: 'Technical Skills',
@@ -375,10 +429,10 @@ export default defineI18nLocale(async () => {
     generatePDF: generatePDF,
     website: {
       description:
-        'Professional portfolio of Carlos García, a senior backend developer with experience in automation, deployment, and system operations.',
-      title: 'Carlos García | Senior Backend Developer',
+        'Professional portfolio of Carlos García, Senior Backend / Platform Engineer specialized in Node.js, TypeScript, NestJS, cloud infrastructure (AWS, GCP), CI/CD, and observability.',
+      title: 'Carlos García | Senior Backend / Platform Engineer',
       keywords:
-        'portfolio, senior backend developer, software developer, backend, automation, infrastructure, observability, ci/cd, terraform, aws, gcp, digitalocean, docker, nuxt, vue',
+        'portfolio, senior backend engineer, platform engineer, node.js, typescript, nestjs, backend, automation, infrastructure, observability, ci/cd, terraform, aws, gcp, digitalocean, docker, postgresql, mongodb',
       welcome: 'Welcome to'
     },
     actions: {

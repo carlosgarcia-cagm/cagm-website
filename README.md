@@ -1,6 +1,19 @@
-# Nuxt Minimal Starter
+# Carlos García — Portfolio / CV
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal portfolio and online CV of Carlos García, Senior Backend / Platform Engineer.
+
+🌐 **Live site:** [https://cagm-website.vercel.app/en](https://cagm-website.vercel.app/en) (English) · [https://cagm-website.vercel.app/](https://cagm-website.vercel.app/) (Español)
+
+Built with [Nuxt 3](https://nuxt.com), Tailwind CSS and `@nuxtjs/i18n`, deployed on Vercel.
+
+## Content
+
+All CV content (experience, skills, projects, SEO texts) lives in the locale files:
+
+- `locales/es-ES.ts` — Spanish (default locale)
+- `locales/en-US.ts` — English
+
+Update both files when the CV changes so the two languages stay in sync.
 
 ## Setup
 
