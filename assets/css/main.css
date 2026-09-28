@@ -1,0 +1,119 @@
+@import 'tailwindcss';
+
+/* Inter Variable — latin + latin-ext subsets only (saves ~92KB vs all 7 subsets) */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* dark: follows the `dark` class on <html> (theme toggle), set before paint by
+   the script in app.vue from the saved choice or the system preference */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Brand colors extracted from logo.png */
+@theme {
+  --color-primary-50:  #F1F8FE;
+  --color-primary-100: #DEEFFC;
+  --color-primary-200: #B4DAF9;
+  --color-primary-300: #72B9F3;
+  --color-primary-400: #2291EC;
+  --color-primary-500: #0E64A9;
+  --color-primary-600: #062B49;
+  --color-primary-700: #041C2F;
+  --color-primary-800: #031321;
+  --color-primary-900: #020B13;
+  --color-primary-950: #010609;
+
+  --color-accent: #FD6601;
+  --color-accent-dark: #D95400;
+}
+
+html {
+  /* keep section headings visible below the fixed header */
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* v-reveal (plugins/reveal.ts): only elements that start below the fold wait */
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.is-revealed {
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+/* soft pulsing halo around the hero logo */
+.logo-halo {
+  position: relative;
+}
+
+.logo-halo::before,
+.logo-halo::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 4px solid color-mix(in srgb, var(--color-primary-500) 80%, transparent);
+  animation: halo-pulse 3s ease-out infinite;
+  pointer-events: none;
+}
+
+:where(.dark, .dark *) .logo-halo::before,
+:where(.dark, .dark *) .logo-halo::after {
+  border-color: color-mix(in srgb, var(--color-primary-200) 70%, transparent);
+}
+
+.logo-halo::after {
+  animation-delay: 1.5s;
+}
+
+@keyframes halo-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+}

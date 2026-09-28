@@ -1,0 +1,64 @@
+name: Notion sync
+
+# Notion is the source of truth for the CV content. Once a day (or on demand)
+# this reads the Notion pages, lets DeepSeek apply what changed to the es/en
+# locale files and opens a pull request to review before it goes live.
+on:
+  schedule:
+    - cron: '17 11 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Only show what would change (no pull request)
+        type: boolean
+        default: false
+
+concurrency:
+  group: notion-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: bun install --frozen-lockfile
+
+      - name: Sync from Notion
+        id: sync
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          NOTION_SYNC_PR_BODY: ${{ runner.temp }}/notion-sync-pr.md
+        run: bun scripts/notion-sync/index.ts ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      # pull requests opened with GITHUB_TOKEN do not start the CI workflow,
+      # so the checks run here and a failure turns the pull request into a draft
+      - name: Lint and unit tests
+        id: checks
+        if: steps.sync.outputs.changed == 'true'
+        continue-on-error: true
+        run: bun run lint && bun run test
+
+      - name: Open pull request
+        if: steps.sync.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: notion-sync
+          delete-branch: true
+          add-paths: |
+            locales/*.ts
+            content/notion-snapshot.md
+          commit-message: 'content: sync CV from Notion'
+          title: 'Sync CV content from Notion'
+          body-path: ${{ runner.temp }}/notion-sync-pr.md
+          draft: ${{ steps.checks.outcome == 'failure' }}
+          labels: notion-sync

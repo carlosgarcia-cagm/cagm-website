@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://cagm-website.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cagm-website.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://cagm-website.vercel.app/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cagm-website.vercel.app/" />
+  </url>
+  <url>
+    <loc>https://cagm-website.vercel.app/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cagm-website.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://cagm-website.vercel.app/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cagm-website.vercel.app/" />
+  </url>
+  <url>
+    <loc>https://cagm-website.vercel.app/cv</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cagm-website.vercel.app/cv" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://cagm-website.vercel.app/es/cv" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cagm-website.vercel.app/cv" />
+  </url>
+  <url>
+    <loc>https://cagm-website.vercel.app/es/cv</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cagm-website.vercel.app/cv" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://cagm-website.vercel.app/es/cv" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cagm-website.vercel.app/cv" />
+  </url>
+</urlset>

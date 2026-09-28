@@ -1,242 +1,241 @@
-const profile: TranslationKeys['profile'] = {
-  name: 'Nombre',
-  title: 'Configuración del currículum',
-  namePlaceholder: 'Título del currículum',
-  personalInfo: {
-    contactInfo: 'Información de contacto',
-    title: 'Información',
-    fullname: 'Nombre completo',
-    areaProfession: 'Área de profesión',
-    areaProfessionPlaceholder: 'Selecciona un área de profesión',
-    professionPlaceholder: 'Selecciona una profesión',
-    profession: 'Profesión',
-    email: 'Correo electrónico',
-    phone: 'Teléfono',
-    address: 'Dirección',
-    city: 'Ciudad',
-    country: 'País',
-    builder: 'Rellena la información',
-    aboutMe: 'Acerca de mí',
-    uploadPhoto: 'Subir foto'
+export default {
+  website: {
+    title: 'Carlos García | Ingeniero Senior Backend / Platform Engineer',
+    description:
+      'Portafolio profesional de Carlos García, Ingeniero Senior Backend / Platform Engineer especializado en Node.js, TypeScript, NestJS, infraestructura cloud (AWS, GCP), CI/CD y observabilidad.',
+    keywords:
+      'portafolio, ingeniero backend senior, platform engineer, node.js, typescript, nestjs, backend, automatización, infraestructura, observabilidad, ci/cd, terraform, aws, gcp, digitalocean, docker, postgresql, mongodb'
   },
-  aboutMe: {
-    title: 'Acerca de mí',
-    summary: 'Resumen',
-    slogan: 'Eslogan',
-    logo: 'Logo',
-    uploadLogo: 'Subir logo'
+  nav: {
+    skills: 'Habilidades',
+    experience: 'Experiencia',
+    projects: 'Proyectos',
+    education: 'Educación',
+    cv: 'CV',
+    contact: 'Contacto',
+    openMenu: 'Abrir menú',
+    closeMenu: 'Cerrar menú',
+    switchLanguage: 'View in English',
+    mainNavigation: 'Navegación principal',
+    skipToContent: 'Saltar al contenido',
+    toggleTheme: 'Cambiar modo oscuro'
   },
-  experience: {
-    title: 'Experiencia',
-    jobTitle: 'Título del trabajo',
-    company: 'Compañía',
-    position: 'Posición',
-    description: 'Descripción'
-  },
-  education: {
-    title: 'Educación',
-    fieldOfStudy: 'Campo de estudio',
-    degree: 'Título',
-    degreePlaceholder: 'Selecciona un título',
-    institution: 'Institución',
-    startDate: 'Fecha de inicio',
-    endDate: 'Fecha de finalización',
-    secondary: 'Secundaria',
-    highSchool: 'Escuela secundaria',
-    technical: 'Técnica',
-    undergraduate: 'Licenciatura',
-    graduate: 'Posgrado',
-    masters: 'Maestría',
-    doctorate: 'Doctorado'
+  home: {
+    title: 'Ingeniero Senior Backend / Platform Engineer',
+    description:
+      'Más de {years} años como consultor independiente construyendo sistemas en producción para medios, IoT y productividad empresarial con Node.js, TypeScript y NestJS. Diseño infraestructura en AWS y GCP con Terraform, CI/CD y observabilidad, con resultados comprobados: costos reducidos 10x y mejoras de rendimiento de hasta 42x en producción.',
+    viewProjects: 'Ver proyectos',
+    contactMe: 'Contáctame',
+    metrics: [
+      { value: '{years}+', label: 'años de experiencia' },
+      { value: '42x', label: 'conversión de video más rápida' },
+      { value: '10x', label: 'menor costo de almacenamiento' },
+      { value: '6', label: 'personas lideradas' }
+    ]
   },
   skills: {
     title: 'Habilidades técnicas',
-    skill: 'Habilidad',
-    less1year: 'Menos de 1 año',
-    '1to3years': '1 a 3 años',
-    '3to5years': '3 a 5 años',
-    '5to10years': '5 a 10 años',
-    '10plusyears': 'Más de 10 años',
-    job: 'Trabajo',
-    yearsOfExperience: 'Años de experiencia',
-    placeholderSkill: 'Selecciona una habilidad',
+    legend: { primary: '3+ años', secondary: '1–3 años' },
     categories: [
       {
         id: 'backend',
         title: 'Backend',
         gradient: 'from-orange-500 to-orange-600',
-        icon:
-          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>',
+        icon: 'heroicons:computer-desktop',
         skills: [
-          { name: 'Node.js', level: 'green' },
-          { name: 'Express.js', level: 'green' },
-          { name: 'TypeScript', level: 'blue' },
-          { name: 'APIs e integraciones', level: 'green' },
-          { name: 'Bases de datos (MongoDB, PostgreSQL)', level: 'green' },
-          { name: 'Testing (Jest, Vitest)', level: 'blue' }
+          { name: 'Node.js', level: 'primary' },
+          { name: 'TypeScript', level: 'primary' },
+          { name: 'NestJS', level: 'primary' }
         ]
       },
-    {
-      id: 'infra',
-      title: 'Infra',
-      gradient: 'from-purple-500 to-purple-600',
-      icon:
-        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path>',
-      skills: [
-        { name: 'Terraform', level: 'green' },
-        { name: 'CI/CD (GitHub Actions)', level: 'green' },
-        { name: 'Docker', level: 'green' },
-        { name: 'Nube (AWS, GCP, DigitalOcean)', level: 'green' }
-      ]
-    },
-    {
-      id: 'observability',
-      title: 'Observabilidad',
-      gradient: 'from-indigo-500 to-indigo-600',
-      icon:
-        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>',
-      skills: [
-        { name: 'Grafana', level: 'blue' },
-        { name: 'Prometheus', level: 'blue' },
-        { name: 'Alertmanager', level: 'blue' }
-      ]
-    },
-    {
-      id: 'analytics',
-      title: 'Analítica',
-      gradient: 'from-teal-500 to-teal-600',
-      icon:
-        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>',
-      skills: [
-        { name: 'Metabase', level: 'blue' }
-      ]
-    },
+      {
+        id: 'databases',
+        title: 'Bases de datos',
+        gradient: 'from-green-500 to-green-600',
+        icon: 'heroicons:circle-stack',
+        skills: [
+          { name: 'MongoDB', level: 'primary' },
+          { name: 'PostgreSQL', level: 'secondary' },
+          { name: 'Redis', level: 'secondary' },
+          { name: 'Prisma', level: 'secondary' }
+        ]
+      },
+      {
+        id: 'infra',
+        title: 'Cloud e infraestructura',
+        gradient: 'from-purple-500 to-purple-600',
+        icon: 'heroicons:server-stack',
+        skills: [
+          { name: 'GCP', level: 'primary' },
+          { name: 'DigitalOcean', level: 'primary' },
+          { name: 'Docker', level: 'primary' },
+          { name: 'Terraform', level: 'secondary' },
+          { name: 'AWS', level: 'secondary' }
+        ]
+      },
+      {
+        id: 'cicd',
+        title: 'CI/CD y testing',
+        gradient: 'from-pink-500 to-pink-600',
+        icon: 'heroicons:arrow-path',
+        skills: [
+          { name: 'GitHub Actions', level: 'primary' },
+          { name: 'Vitest', level: 'primary' },
+          { name: 'Jest', level: 'secondary' }
+        ]
+      },
+      {
+        id: 'observability',
+        title: 'Observabilidad y herramientas',
+        gradient: 'from-indigo-500 to-indigo-600',
+        icon: 'heroicons:chart-bar',
+        skills: [
+          { name: 'FFmpeg', level: 'primary' },
+          { name: 'Grafana', level: 'secondary' },
+          { name: 'Prometheus', level: 'secondary' }
+        ]
+      },
       {
         id: 'frontend',
         title: 'Frontend',
         gradient: 'from-blue-500 to-blue-600',
-        icon:
-          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>',
+        icon: 'heroicons:cog-6-tooth',
         skills: [
-          { name: 'Vue 3 & Composition API', level: 'green' },
-          { name: 'Nuxt.js', level: 'green' },
-          { name: 'JavaScript ES6+', level: 'green' },
-          { name: 'Quasar', level: 'blue' }
+          { name: 'Angular', level: 'primary' },
+          { name: 'Vue.js / Nuxt 3', level: 'primary' }
         ]
       }
     ]
   },
-  languages: {
-    title: 'Idiomas',
-    language: 'Idioma',
-    level: 'Nivel',
-    beginner: 'Principiante',
-    intermediate: 'Intermedio',
-    advanced: 'Avanzado',
-    native: 'Nativo',
-    placeholderLanguage: 'Selecciona un idioma'
-  },
   timeline: {
     title: 'Experiencia profesional',
-    description:
-      'Una trayectoria enfocada en backend, automatización y operaciones en la nube.',
-    workModes: {
-      remote: 'Remoto',
-      onsite: 'Presencial',
-      hybrid: 'Híbrido'
-    },
+    workModes: { remote: 'Remoto', onsite: 'Presencial', hybrid: 'Híbrido' },
     achievementsLabel: 'Logros principales',
     projectsLabel: 'Proyectos',
     experiences: [
       {
-        company: 'Lanubetv S.A.',
-        position: 'Consultor técnico por contrato',
+        company: 'Roi Studio',
+        current: true,
+        position: 'Ingeniero Senior Backend / Platform Engineer (Contrato)',
         location: 'Guayaquil, Ecuador',
         workMode: 'remote',
-        period: 'Enero 2019 – Presente',
+        period: 'Noviembre 2023 – Presente',
         description:
-          'Lideré el diseño, desarrollo e implementación de una plataforma orientada a automatización, confiabilidad y optimización de costos.',
+          'Contrato internacional construyendo y operando sistemas en producción para localización IoT en tiempo real, SaaS de educación especial y productividad empresarial.',
         achievements: [
-          'Automaticé el proceso de conversión reduciendo tiempos de 1h a 4 min (+93% eficiencia)',
-          'Reduje costos de almacenamiento del 90% migrando a Space Storage (S3)',
-          'Eliminé servidor Windows Server reduciendo costos en un 65%',
-          'Disminuí costos adicionales en un 35% optimizando la infraestructura',
-          'Implementé Screaming Architecture, pruebas automatizadas y pipelines de CI/CD'
+          'Implementé observabilidad end-to-end (métricas → alertas → dashboards) con Prometheus, Grafana y Alertmanager sobre microservicios en ECS',
+          'Construí entornos sandbox por PR bajo demanda en EC2 con Docker y CI/CD en GitHub Actions',
+          'Configuré Metabase desde cero en ECS con configuración automatizada y versionada, y políticas de backup y retención S3 → Glacier',
+          'Rediseñé los módulos centrales de un SaaS multi-tenant de educación especial (sesiones, facturación, IEP, autenticación OTP) con NestJS, Prisma y PostgreSQL, y contribuí a una cobertura de tests unitarios y e2e con Jest de ~76%',
+          'Implementé SSO con Azure AD + WorkOS para autenticación federada empresarial',
+          'Ejecuté operaciones críticas de datos en producción sobre una base MongoDB con más de 200k usuarios activos y 1 TB+ de datos: correcciones masivas, recuperación de información perdida desde BigQuery y eliminaciones seguras',
+          'Desarrollé 3 Google Cloud Functions con Cloud Scheduler y gestioné infraestructura GCP con Terraform'
+        ],
+        projects: [
+          {
+            name: 'Plataforma de Rastreo 3D en Tiempo Real (ZLP)',
+            period: 'Feb 2025 – Presente',
+            description:
+              'Inteligencia de ubicación IoT sobre AWS: microservicios NestJS, streaming con Kinesis, Terraform, observabilidad y unit tests de servicios de geofencing.'
+          },
+          {
+            name: 'Plataforma SaaS de Educación Especial (IEP)',
+            period: 'Jul 2025 – Dic 2025',
+            description:
+              'SaaS multi-tenant con NestJS + Prisma + PostgreSQL que reemplazó un sistema heredado sin tests. Rediseñé las sesiones terapéuticas con Strategy + Observer (~1.200 → ~400 LOC; un nuevo tipo de sesión en ~1 hora), la facturación por participante con 5 criterios de rateo, los IEP (mandatos, metas y periodos de autorización) como máquina de estados y la autenticación OTP segura (argon2, rate limiting, Redis).'
+          },
+          {
+            name: 'Plataforma de Monitoreo y Productividad Empresarial',
+            period: 'Nov 2023 – Feb 2025',
+            description:
+              'Mantenimiento de un ecosistema completo (web app, API, app móvil Flutter, backoffice y workers), cumpliendo 40+ puntos de historia por sprint y estabilizando el backlog de bugs.'
+          }
+        ],
+        technologies: [
+          'NestJS',
+          'TypeScript',
+          'PostgreSQL',
+          'Prisma',
+          'Redis',
+          'AWS',
+          'Terraform',
+          'Docker',
+          'Prometheus',
+          'Grafana',
+          'Metabase',
+          'GitHub Actions',
+          'MongoDB',
+          'GCP',
+          'Angular'
+        ]
+      },
+      {
+        company: 'Lanubetv S.A.',
+        position: 'Consultor Técnico Senior (Contrato)',
+        location: 'Guayaquil, Ecuador',
+        workMode: 'remote',
+        period: 'Enero 2019 – Marzo 2026',
+        description:
+          'Plataforma de transcoding que recibe comerciales, los convierte a formatos específicos por canal con FFmpeg y los entrega a medios. Dedicación completa hasta mediados de 2021 y luego parcial.',
+        achievements: [
+          'Migré el pipeline de transcoding a funciones serverless en Go con procesamiento paralelo, logrando hasta 42x menos tiempo de conversión (60–80 min → 1m55s por lote de canales)',
+          'Reduje 10x los costos de almacenamiento migrando a DigitalOcean Spaces',
+          'Eliminé un servidor Windows operado manualmente y ajusté el tamaño de los servidores a la demanda',
+          'Desarrollé el sitio web corporativo (lanubetv.net) con Vue y Vuetify, y lo actualicé de Vue 2 a Vue 3'
         ],
         projects: [],
         technologies: [
           'Node.js',
-          'Ffmpeg/Ffmbc',
+          'Go',
+          'FFmpeg',
           'Vue.js',
           'Quasar',
+          'Vuetify',
           'Docker',
           'GitHub Actions',
           'Vitest',
-          'MongoDB'
-        ]
-      },
-      {
-        company: 'Consultor Técnico Independiente',
-        position: 'Desarrollador Senior Backend por contrato',
-        location: 'Guayaquil, Ecuador',
-        workMode: 'remote',
-        period: 'Diciembre 2023 – Enero 2025',
-        description:
-          'Gestioné el mantenimiento y la optimización de 5 sistemas backend complejos para un proyecto internacional.',
-        achievements: [
-          'Contribuí al aumento del 24% en el MRR anual',
-          'Obtuve un MRR del 50% en Q2 gracias al desarrollo de una nueva funcionalidad',
-          'Ayudé al cierre de un cliente estratégico',
-          'Aumenté la eficiencia del equipo del 40% al 84% en el cierre de tickets',
-          'Desarrollé 3 nuevos workers en la nube utilizando GCF y Cloud Scheduler'
-        ],
-        projects: [],
-        technologies: [
-          'Node.js',
-          'Angular',
-          'Flutter',
           'MongoDB',
-          'Big Query',
-          'WorkOS',
-          'GCP'
+          'DigitalOcean'
         ]
       },
       {
-        company: 'Nextgen',
-        position: 'Desarrollador Backend y Líder Técnico',
+        company: 'Nextgen S.A.',
+        position: 'Líder Técnico (Contrato)',
         location: 'Guayaquil, Ecuador',
         workMode: 'hybrid',
-        period: 'Junio 2021 – Abril 2024',
+        period: 'Julio 2021 – Marzo 2024',
         description:
-          'Lideré múltiples proyectos y equipos de desarrollo, entregando mejoras de backend, soluciones escalables y optimización de procesos.',
+          'Crecí de desarrollador semi-senior a líder técnico, asumiendo decisiones de arquitectura en 4 proyectos concurrentes.',
         achievements: [
-          'Lideré un equipo de 5 desarrolladores y 1 QA',
-          'Implementé mejoras que redujeron los tiempos de desarrollo en un 20%',
-          'Mejoré la gestión del equipo en un 30%',
-          'Optimicé código para manejar 1M+ registros/petición'
+          'Lideré un equipo de 5 desarrolladores + 1 QA durante más de 1 año: sprints, mentoría y revisión de entregables',
+          'Reduje 20% los tiempos de desarrollo mejorando procesos y comunicación del equipo',
+          'Diseñé una arquitectura serverless con DynamoDB capaz de procesar más de 1M de registros por petición',
+          'Aseguré la retención de un cliente clave liderando la resolución de errores críticos'
         ],
         projects: [
           {
             name: 'Senscloud',
-            period: '2021 - 2024',
+            period: '2021 – 2024',
             description:
-              'Gestión del desarrollo de funcionalidades enfocadas en backend para los clientes'
+              'Liderazgo técnico del equipo y desarrollo de nuevas funcionalidades para clientes.'
+          },
+          {
+            name: 'NextTrace',
+            period: '2023',
+            description:
+              'Arquitectura serverless con DynamoDB para más de 1M de registros por petición.'
           },
           {
             name: 'Xtrim',
-            period: '2024',
-            description: 'Optimización de la comunicación y entrega de resultados'
+            period: 'Sep – Oct 2023',
+            description:
+              'Me incorporé en la etapa final, introduje Jira en reemplazo de Excel y optimicé consultas con índices.'
           },
           {
             name: 'Nextsign',
             period: '2024',
             description:
-              'Resolución de errores críticos y desarrollo de nuevas características de backend'
-          },
-          {
-            name: 'NextTrace',
-            period: '2023',
-            description: 'Desarrollo e implementación de arquitectura serverless en backend'
+              'Liderazgo técnico en la resolución de errores críticos post-Fase 1.'
           }
         ],
         technologies: [
@@ -245,6 +244,7 @@ const profile: TranslationKeys['profile'] = {
           'React',
           'MongoDB',
           'PostgreSQL',
+          'DynamoDB',
           'Docker',
           'AWS'
         ]
@@ -257,24 +257,16 @@ const profile: TranslationKeys['profile'] = {
       'Una selección de proyectos donde he trabajado en migraciones, automatización, optimización y evolución de sistemas backend.',
     CTA: '¿Necesitas apoyo en backend, automatización u optimización de sistemas?',
     viewProject: 'Ver proyecto',
+    showMore: 'Ver más',
+    showLess: 'Ver menos',
     visibilityPublic: 'Público',
     visibilityPrivate: 'Privado',
     items: [
-      {
-        id: 'la-nube-tv-migration',
-        title: 'Migración de plataforma La Nube TV',
-        description:
-          'Migración de la plataforma de La Nube TV de PHP, MySQL y JavaScript a Vue 3, Quasar, Node.js y MongoDB, con una arquitectura más limpia y mantenible.',
-        projectUrl: 'https://app2.lanubetv.net/',
-        technologies: ['Vue 3', 'Quasar', 'Node.js', 'MongoDB'],
-        isPublic: false
-      },
       {
         id: 'nextgen-timbres',
         title: 'Plataforma de timbres fiscales (NextGen)',
         description:
           'Un sistema serverless para la impresión de timbres fiscales, donde participé en la etapa inicial con Node.js, DynamoDB y servicios cloud.',
-        projectUrl: 'https://app.nextrace.ec/login',
         technologies: ['Serverless', 'Node.js', 'DynamoDB'],
         isPublic: false
       },
@@ -283,15 +275,15 @@ const profile: TranslationKeys['profile'] = {
         title: 'Plataforma de firma electrónica (NextGen)',
         description:
           'Una plataforma de firma electrónica donde apoyé en mantenimiento, resolución de bugs y entrega de nuevas funcionalidades backend.',
-        projectUrl: 'https://app.nextsign.ec/login',
         technologies: ['Node.js', 'Vue.js'],
         isPublic: false
       },
       {
         id: 'adaptcv',
+        personal: true,
         title: 'AdaptCV',
         description:
-          'Una aplicación web para generar CVs con exportación a PDF, construida con Nuxt, Vuetify, Node.js, Express y MongoDB.',
+          'Plataforma web en producción para generar CVs profesionales con múltiples plantillas, soporte bilingüe (ES/EN) y traducción automática con IA. Desarrollada como monorepo full-stack (Turborepo) con CI/CD automatizado.',
         projectUrl: 'https://adaptcv-frontend.vercel.app/',
         githubRepos: [
           {
@@ -303,8 +295,30 @@ const profile: TranslationKeys['profile'] = {
             url: 'https://github.com/carlosgarcia-cagm/adaptcv-backend'
           }
         ],
-        technologies: ['Nuxt', 'Vuetify', 'Node.js', 'Express', 'MongoDB'],
+        technologies: [
+          'NestJS',
+          'Nuxt 3',
+          'MongoDB',
+          'Docker',
+          'GitHub Actions',
+          'TypeScript'
+        ],
         isPublic: true
+      },
+      {
+        id: 'real-estate-analyzer',
+        personal: true,
+        title: 'Analizador de precios inmobiliarios',
+        description:
+          'Herramienta de web scraping que recolecta datos de propiedades inmobiliarias y estima automáticamente el valor de mercado según las características del terreno, para evaluar si una propiedad tiene un precio aceptable de compra.',
+        technologies: [
+          'TypeScript',
+          'Playwright',
+          'Node.js',
+          'Firebase',
+          'Google Sheets API'
+        ],
+        isPublic: false
       },
       {
         id: 'la-nube-tv',
@@ -314,160 +328,76 @@ const profile: TranslationKeys['profile'] = {
         projectUrl: 'https://lanubetv.net/',
         technologies: ['Vue 3', 'Vuetify'],
         isPublic: false
-      },
-      {
-        id: 'wedding-website',
-        title: 'Sitio web de boda',
-        description:
-          'Un sitio web personal sencillo creado para mi boda, que muestra información sobre la fecha, el lugar y una galería de fotos. Utiliza Vue.js, Quasar y Firebase.',
-        projectUrl: 'https://kenya-carlos-wedding.vercel.app/',
-        technologies: ['Vue.js', 'Quasar', 'Firebase'],
-        isPublic: false
       }
     ]
+  },
+  education: {
+    title: 'Educación',
+    items: [
+      {
+        institution: 'ESPOL — Escuela Superior Politécnica del Litoral',
+        degree: 'Ingeniería en Telecomunicaciones',
+        note: 'No finalizada: pendiente 1 materia final y validación de tesis.'
+      }
+    ]
+  },
+  languages: {
+    title: 'Idiomas',
+    items: [
+      { name: 'Español', level: 'Nativo' },
+      { name: 'Inglés', level: 'Intermedio (B2)' }
+    ]
+  },
+  cv: {
+    title: 'CV en formato Harvard',
+    description:
+      'CV de Carlos García en formato Harvard, listo para ver, imprimir o descargar en PDF.',
+    view: 'Ver CV',
+    download: 'Descargar PDF',
+    print: 'Imprimir',
+    back: 'Volver al sitio',
+    zoomIn: 'Acercar',
+    zoomOut: 'Alejar',
+    zoomLevel: 'Nivel de zoom',
+    fitWidth: 'Ajustar al ancho',
+    actualSize: 'Tamaño original',
+    summary: 'Resumen',
+    experience: 'Experiencia',
+    education: 'Educación',
+    projects: 'Proyectos personales',
+    skills: 'Habilidades técnicas e idiomas',
+    technologies: 'Tecnologías'
+  },
+  chat: {
+    open: 'Pregúntale a mi CV',
+    title: 'Pregúntale a mi CV',
+    close: 'Cerrar chat',
+    disclaimer:
+      'Asistente con IA que responde con la información de este CV. Las preguntas se procesan con DeepSeek. Puede cometer errores.',
+    greeting:
+      '¡Hola! Pregúntame sobre la experiencia, los proyectos o las habilidades de Carlos.',
+    suggestions: [
+      '¿Qué experiencia tiene con AWS?',
+      '¿Cuál ha sido su mayor logro?',
+      '¿Ha liderado equipos?'
+    ],
+    placeholder: 'Escribe tu pregunta…',
+    send: 'Enviar',
+    typing: 'Escribiendo…',
+    errors: {
+      rateLimited:
+        'Has hecho muchas preguntas seguidas. Intenta de nuevo en unos minutos.',
+      unavailable:
+        'El asistente no está disponible ahora. Puedes escribirme por correo o LinkedIn.',
+      generic: 'No pude responder. Intenta de nuevo.'
+    }
+  },
+  footer: {
+    telegram: 'Contactar por Telegram',
+    whatsapp: 'Contactar por WhatsApp',
+    email: 'Enviar un correo',
+    linkedin: 'Perfil de LinkedIn',
+    github: 'Perfil de GitHub',
+    copyright: 'Todos los derechos reservados'
   }
-} as TranslationKeys['profile']
-
-const builder: TranslationKeys['builder'] = {
-  title: 'Constructor',
-  name: 'Nombre',
-  status: 'Estado',
-  description: 'Descripción',
-  template: 'Plantilla',
-  id: 'ID',
-  sections: 'Secciones',
-  selectTemplate: 'Selecciona una plantilla'
-}
-
-const baseEntity: TranslationKeys['baseEntity'] = {
-  createdAt: 'Creado',
-  updatedAt: 'Actualizado',
-  createdBy: 'Creado por',
-  updatedBy: 'Actualizado por',
-  deletedAt: 'Eliminado'
-}
-
-const actions: TranslationKeys['actions'] = {
-  add: 'Agregar',
-  edit: 'Editar',
-  delete: 'Eliminar',
-  save: 'Guardar',
-  cancel: 'Cancelar',
-  submit: 'Enviar',
-  options: 'Opciones',
-  upload: 'Subir',
-  uploadImage: 'Subir imagen',
-  saveImage: 'Guardar imagen',
-  back: 'Volver',
-  next: 'Siguiente',
-  previous: 'Anterior',
-  continue: 'Continuar',
-  finish: 'Finalizar',
-  register: 'Registrar',
-  signIn: 'Iniciar sesión',
-  signOut: 'Cerrar sesión',
-  forgotPassword: '¿Olvidé mi contraseña?',
-  publish: 'Publicar',
-  preview: 'Visualizar',
-  settings: 'Configuraciones',
-  signUp: 'Registrarse',
-  print: 'Imprimir',
-  download: 'Descargar',
-  exportPdf: 'Exportar PDF',
-  downloadPdf: 'Descargar PDF',
-  exportCSV: 'Exportar CSV',
-  translate: 'Traducir'
-}
-
-const generatePDF: TranslationKeys['generatePDF'] = {
-  generatingPdfForTemplate: 'Generando PDF para la plantilla'
-}
-
-const footer: TranslationKeys['footer'] = {
-  telegramTooltip: 'Contactar por Telegram',
-  whatsappTooltip: 'Contactar por WhatsApp',
-  emailTooltip: 'Enviar email',
-  copyright: 'Todos los derechos reservados'
-}
-
-export default defineI18nLocale(async () => {
-  return {
-    home: {
-      title: 'Desarrollador de software senior enfocado en backend',
-      description:
-        'Construyo APIs y sistemas backend, automatizo procesos y resuelvo problemas en sistemas reales. Tengo experiencia práctica con CI/CD, Terraform, AWS, GCP, DigitalOcean y observabilidad cuando el proyecto lo requiere.',
-      viewProjects: 'Ver Proyectos',
-      downloadCV: 'Descargar CV',
-      skillsTitle: 'Habilidades Técnicas',
-      timelineTitle: 'Experiencia Profesional',
-      projectsTitle: 'Proyectos seleccionados',
-      projectsDescription:
-        'Una selección de proyectos donde he trabajado en migraciones, automatización, optimización y evolución de sistemas backend.',
-      projectsCTA: '¿Necesitas apoyo en backend, automatización u optimización de sistemas?',
-      contactMe: 'Contáctame'
-    },
-    generatePDF: generatePDF,
-    website: {
-      title: 'Carlos García | Desarrollador Backend Senior',
-      description:
-        'Portafolio profesional de Carlos García, desarrollador backend senior con experiencia en automatización, despliegue y operación de sistemas.',
-      keywords:
-        'portafolio, desarrollador backend, desarrollador senior, backend, automatización, infraestructura, observabilidad, ci/cd, terraform, aws, gcp, digitalocean, docker, nuxt, vue',
-      welcome: 'Bienvenido a'
-    },
-    actions: actions,
-    common: {
-      home: 'Inicio',
-      about: 'Acerca de',
-      services: 'Servicios',
-      contact: 'Contacto',
-      testimonials: 'Testimonios',
-      blog: 'Blog',
-      portfolio: 'Portafolio',
-      privacyPolicy: 'Política de privacidad',
-      termsOfService: 'Términos de servicio',
-      email: 'Correo electrónico',
-      noData: 'No hay datos disponibles',
-      startDate: 'Fecha de inicio',
-      endDate: 'Fecha de finalización',
-      current: 'Presente'
-    },
-    login: {
-      password: 'contraseña',
-      email: 'correo electrónico',
-      emailPlaceholder: 'Ingresa tu correo electrónico',
-      passwordPlaceholder: 'Ingresa tu contraseña',
-      title: 'Iniciar sesión',
-      forgotPassword: '¿Olvidaste tu contraseña?',
-      rememberMe: 'Recuérdame',
-      signUp: 'Regístrate',
-      signIn: 'Iniciar sesión',
-      dontHaveAccount: '¿No tienes una cuenta?',
-      signInWithGoogle: 'Iniciar sesión con Google',
-      keepMeLoggedIn: 'Mantenerme conectado',
-      loginAccount: 'Inicia sesión en tu cuenta',
-      loginEnterDetails: 'Ingresa tus datos para iniciar sesión'
-    },
-    registration: {
-      username: 'Nombre de usuario',
-      email: 'Correo electrónico',
-      password: 'Contraseña',
-      confirmPassword: 'Confirmar contraseña',
-      signUp: 'Regístrate'
-    },
-    routes: {
-      home: 'Inicio',
-      builder: 'Constructor',
-      preview: 'Vista previa',
-      templates: 'Plantillas',
-      settings: 'Configuraciones',
-      profile: 'Perfil',
-      dashboard: 'Tablero',
-      logout: 'Cerrar sesión'
-    },
-    baseEntity: baseEntity,
-    builder: builder,
-    profile: profile,
-    footer: footer
-  } as TranslationKeys
-})
+} satisfies TranslationKeys
