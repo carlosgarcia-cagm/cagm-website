@@ -68,11 +68,20 @@ export default defineNuxtConfig({
     langDir: 'locales/',
     restructureDir: './',
     strategy: 'prefix_except_default',
-    detectBrowserLanguage: false
+    detectBrowserLanguage: false,
+    experimental: {
+      httpCacheDuration: 31536000
+    }
   },
   routeRules: {
     // English used to live under /en: keep old links working
     '/en': { redirect: { to: '/', statusCode: 301 } },
-    '/en/**': { redirect: { to: '/**', statusCode: 301 } }
+    '/en/**': { redirect: { to: '/**', statusCode: 301 } },
+    // Static assets without content hash: cache 1 day, revalidate up to 7 days
+    '/**/*.png': { headers: { 'cache-control': 'public, max-age=86400, stale-while-revalidate=604800' } },
+    '/favicon.ico': { headers: { 'cache-control': 'public, max-age=86400, stale-while-revalidate=604800' } },
+    '/robots.txt': { headers: { 'cache-control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800' } },
+    '/sitemap.xml': { headers: { 'cache-control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800' } },
+    '/llms.txt': { headers: { 'cache-control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800' } }
   }
 })
