@@ -77,6 +77,15 @@ export default defineNuxtConfig({
     // English used to live under /en: keep old links working
     '/en': { redirect: { to: '/', statusCode: 301 } },
     '/en/**': { redirect: { to: '/**', statusCode: 301 } },
+    // Security headers for all routes
+    '/**': {
+      headers: {
+        'x-content-type-options': 'nosniff',
+        'x-frame-options': 'DENY',
+        'referrer-policy': 'strict-origin-when-cross-origin',
+        'permissions-policy': 'camera=(), microphone=(), geolocation=(), payment=()'
+      }
+    },
     // Static assets without content hash: cache 1 day, revalidate up to 7 days
     '/**/*.png': { headers: { 'cache-control': 'public, max-age=86400, stale-while-revalidate=604800' } },
     '/favicon.ico': { headers: { 'cache-control': 'public, max-age=86400, stale-while-revalidate=604800' } },
