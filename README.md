@@ -99,8 +99,18 @@ bun install
 | `bun run lint` | ESLint |
 | `bun run test` | Unit tests (Vitest) |
 | `bun run test:e2e` | E2E tests (Playwright) against the production build — run `bun run build` first |
+| `bun run install:browsers` | Install Playwright browsers (see note below) |
 
-The first time, install the Playwright browser with `bunx playwright install chromium`.
+**Installing Playwright browsers:** macOS 15+ has a Gatekeeper bug that causes
+`playwright install` to hang indefinitely on unsigned ARM64 binaries. Use the
+wrapper script instead — it downloads with curl, extracts with Python and ad-hoc
+signs the binaries so future launches don't stall:
+
+```bash
+bun run install:browsers
+```
+
+On Linux (and CI) the script delegates to `playwright install` as usual.
 
 ## CI
 
