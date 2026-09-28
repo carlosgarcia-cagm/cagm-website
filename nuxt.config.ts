@@ -7,7 +7,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/icon',
-    '@nuxt/image',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
     '@nuxt/eslint'
@@ -22,6 +21,7 @@ export default defineNuxtConfig({
   },
   icon: {
     // bundle the icons used so they render without calling the Iconify API
+    serverBundle: false,
     clientBundle: {
       icons: [
         'heroicons:computer-desktop',
