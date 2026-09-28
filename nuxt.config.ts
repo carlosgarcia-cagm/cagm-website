@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: process.env.NODE_ENV !== 'production' },
 
-  css: ['@fontsource-variable/inter', '~/assets/css/main.css'],
+  css: ['~/assets/css/main.css'],
 
   modules: [
     '@nuxt/icon',
