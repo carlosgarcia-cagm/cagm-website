@@ -12,6 +12,14 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/eslint'
   ],
+
+  nitro: {
+    prerender: {
+      routes: ['/', '/es', '/cv', '/es/cv', '/llms.txt'],
+      crawlLinks: false,
+      failOnError: false
+    }
+  },
   icon: {
     // bundle the icons used so they render without calling the Iconify API
     clientBundle: {
