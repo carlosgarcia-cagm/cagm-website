@@ -31,9 +31,13 @@ jobs:
           retention-days: 1
 
   e2e:
-    name: E2E (Playwright)
+    name: E2E (shard ${{ matrix.shard }}/2)
     needs: checks
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2]
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
@@ -46,10 +50,10 @@ jobs:
           name: nuxt-output
           path: .output
       - run: bunx playwright install --with-deps chromium
-      - run: bun run test:e2e
+      - run: bun run test:e2e -- --shard=${{ matrix.shard }}/2
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: playwright-report
+          name: playwright-report-${{ matrix.shard }}
           path: playwright-report
           retention-days: 7
