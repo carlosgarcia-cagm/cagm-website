@@ -22,6 +22,7 @@ export default defineNuxtConfig({
   icon: {
     // bundle the icons used so they render without calling the Iconify API
     serverBundle: false,
+    fallbackToApi: false,
     clientBundle: {
       icons: [
         'heroicons:computer-desktop',
@@ -80,6 +81,7 @@ export default defineNuxtConfig({
     // Security headers for all routes
     '/**': {
       headers: {
+        'content-security-policy': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; worker-src 'none'; upgrade-insecure-requests;",
         'x-content-type-options': 'nosniff',
         'x-frame-options': 'DENY',
         'referrer-policy': 'strict-origin-when-cross-origin',
