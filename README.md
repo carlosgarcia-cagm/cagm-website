@@ -4,7 +4,7 @@ Personal portfolio and online CV of Carlos García, Senior Backend / Platform En
 
 🌐 **Live site:** [https://cagm-website.vercel.app](https://cagm-website.vercel.app) (English) · [https://cagm-website.vercel.app/es](https://cagm-website.vercel.app/es) (Español)
 
-Built with [Nuxt 3](https://nuxt.com), Tailwind CSS and `@nuxtjs/i18n`, deployed on Vercel.
+Built with [Nuxt 4](https://nuxt.com), Tailwind CSS and `@nuxtjs/i18n`, deployed on Vercel.
 
 ## Content
 
